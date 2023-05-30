@@ -1,0 +1,276 @@
+ERROR: Could not read configuration file: /home/tzp/SOwalker/SOWalker/conf/randgraph.cnf/conf/randgraph.local.cnf
+Please define environment variable RANDGRAPH_ROOT or run the program from that directory.
+current_steps is:0
+current load block is3;nedges is:268434265
+current load block is4;nedges is:268435456
+current load block is5;nedges is:126795792
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 0, 5 -> 5, 4 -> 4, 3 -> 3, 
+cache index : 3 6 6 0 1 2 
+current_steps is:254836043
+current load block is2;nedges is:268203024
+bucket sequence : 5 -> 2, 2 -> 2, 3 -> 2, 4 -> 2, 
+cache index : 6 6 3 1 0 2 
+current_steps is:351250630
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 1, 5 -> 1, 3 -> 1, 4 -> 1, 
+cache index : 6 3 6 1 0 2 
+current_steps is:450783546
+current load block is2;nedges is:268203024
+bucket sequence : 3 -> 2, 2 -> 1, 1 -> 2, 4 -> 2, 
+cache index : 6 1 3 2 0 6 
+current_steps is:512904628
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 2, 0 -> 1, 4 -> 0, 2 -> 0, 1 -> 0, 
+cache index : 3 0 1 6 2 6 
+current_steps is:592771049
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 0, 5 -> 2, 4 -> 5, 0 -> 5, 2 -> 5, 
+cache index : 1 6 0 6 2 3 
+current_steps is:651658102
+current load block is3;nedges is:268434265
+bucket sequence : 3 -> 5, 3 -> 0, 4 -> 3, 5 -> 3, 0 -> 3, 
+cache index : 0 6 6 3 2 1 
+current_steps is:720243986
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 3, 1 -> 5, 4 -> 1, 3 -> 1, 5 -> 1, 
+cache index : 6 3 6 1 2 0 
+current_steps is:792640383
+current load block is2;nedges is:268203024
+bucket sequence : 2 -> 1, 2 -> 3, 4 -> 2, 1 -> 2, 3 -> 2, 
+cache index : 6 1 3 0 2 6 
+current_steps is:863595315
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 2, 0 -> 1, 3 -> 0, 2 -> 0, 1 -> 0, 
+cache index : 3 0 1 2 6 6 
+current_steps is:919570307
+current load block is5;nedges is:126795792
+bucket sequence : 1 -> 5, 5 -> 2, 3 -> 5, 2 -> 5, 
+cache index : 6 2 0 1 6 3 
+current_steps is:963233258
+current load block is4;nedges is:268435456
+bucket sequence : 4 -> 5, 1 -> 4, 5 -> 4, 2 -> 4, 
+cache index : 6 2 0 6 3 1 
+current_steps is:1020817434
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 4, 0 -> 5, 1 -> 0, 4 -> 0, 5 -> 0, 
+cache index : 3 2 6 6 1 0 
+current_steps is:1064582567
+current load block is3;nedges is:268434265
+bucket sequence : 3 -> 4, 3 -> 0, 5 -> 3, 4 -> 3, 0 -> 3, 
+cache index : 0 6 6 3 1 2 
+current_steps is:1116264652
+current load block is2;nedges is:268203024
+bucket sequence : 2 -> 3, 2 -> 0, 4 -> 2, 3 -> 2, 0 -> 2, 
+cache index : 0 6 3 1 2 6 
+current_steps is:1149651836
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 2, 1 -> 3, 4 -> 1, 2 -> 1, 3 -> 1, 
+cache index : 6 3 1 0 2 6 
+current_steps is:1194852825
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 1, 5 -> 2, 4 -> 5, 1 -> 5, 2 -> 5, 
+cache index : 6 1 0 6 2 3 
+current_steps is:1229063048
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 1, 4 -> 0, 2 -> 0, 1 -> 0, 
+cache index : 3 0 1 6 2 6 
+current_steps is:1256156320
+current load block is3;nedges is:268434265
+bucket sequence : 3 -> 0, 4 -> 3, 0 -> 3, 1 -> 3, 
+cache index : 1 0 6 3 2 6 
+current_steps is:1273110857
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 3, 5 -> 0, 3 -> 5, 4 -> 5, 0 -> 5, 
+cache index : 0 6 6 2 1 3 
+current_steps is:1303199747
+current load block is2;nedges is:268203024
+bucket sequence : 2 -> 3, 2 -> 5, 0 -> 2, 3 -> 2, 5 -> 2, 
+cache index : 2 6 3 1 6 0 
+current_steps is:1316421328
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 2, 1 -> 5, 0 -> 1, 2 -> 1, 5 -> 1, 
+cache index : 2 3 1 6 6 0 
+current_steps is:1328025088
+current load block is4;nedges is:268435456
+bucket sequence : 4 -> 1, 4 -> 2, 1 -> 4, 5 -> 4, 2 -> 4, 
+cache index : 6 2 0 6 3 1 
+current_steps is:1343225864
+current load block is3;nedges is:268434265
+bucket sequence : 3 -> 1, 3 -> 4, 1 -> 3, 2 -> 3, 4 -> 3, 
+cache index : 6 2 1 3 0 6 
+current_steps is:1358345092
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 3, 0 -> 4, 1 -> 0, 3 -> 0, 4 -> 0, 
+cache index : 3 2 6 1 0 6 
+current_steps is:1365311275
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 3, 4 -> 5, 1 -> 5, 3 -> 5, 
+cache index : 6 1 6 0 2 3 
+current_steps is:1374637020
+current load block is2;nedges is:268203024
+bucket sequence : 2 -> 5, 4 -> 2, 5 -> 2, 3 -> 2, 
+cache index : 6 6 3 0 2 1 
+current_steps is:1378259553
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 2, 0 -> 5, 2 -> 0, 3 -> 0, 5 -> 0, 
+cache index : 3 6 2 1 6 0 
+current_steps is:1382088568
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 2, 1 -> 0, 5 -> 1, 2 -> 1, 0 -> 1, 
+cache index : 0 3 1 6 6 2 
+current_steps is:1385139204
+current load block is4;nedges is:268435456
+bucket sequence : 4 -> 1, 4 -> 0, 2 -> 4, 1 -> 4, 0 -> 4, 
+cache index : 0 1 2 6 3 6 
+current_steps is:1387543838
+current load block is3;nedges is:268434265
+bucket sequence : 3 -> 4, 3 -> 1, 4 -> 3, 2 -> 3, 1 -> 3, 
+cache index : 6 0 1 3 2 6 
+current_steps is:1389730346
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 4, 5 -> 3, 1 -> 5, 4 -> 5, 3 -> 5, 
+cache index : 6 2 6 0 1 3 
+current_steps is:1391649099
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 3, 4 -> 0, 3 -> 0, 1 -> 0, 
+cache index : 3 0 6 1 2 6 
+current_steps is:1392442672
+current load block is2;nedges is:268203024
+bucket sequence : 2 -> 0, 3 -> 2, 0 -> 2, 4 -> 2, 
+cache index : 1 6 3 2 0 6 
+current_steps is:1392857206
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 2, 5 -> 0, 2 -> 5, 3 -> 5, 0 -> 5, 
+cache index : 0 6 2 1 6 3 
+current_steps is:1393373999
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 2, 1 -> 5, 0 -> 1, 2 -> 1, 5 -> 1, 
+cache index : 2 3 1 6 6 0 
+current_steps is:1393680483
+current load block is4;nedges is:268435456
+bucket sequence : 4 -> 5, 4 -> 1, 2 -> 4, 5 -> 4, 1 -> 4, 
+cache index : 6 0 2 6 3 1 
+current_steps is:1394012128
+current load block is3;nedges is:268434265
+bucket sequence : 3 -> 4, 3 -> 1, 4 -> 3, 5 -> 3, 1 -> 3, 
+cache index : 6 0 6 3 2 1 
+current_steps is:1394202326
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 3, 0 -> 4, 1 -> 0, 3 -> 0, 4 -> 0, 
+cache index : 3 2 6 1 0 6 
+current_steps is:1394293773
+current load block is2;nedges is:268203024
+bucket sequence : 2 -> 3, 2 -> 0, 3 -> 2, 4 -> 2, 0 -> 2, 
+cache index : 0 6 3 2 1 6 
+current_steps is:1394375502
+current load block is1;nedges is:268061757
+bucket sequence : 3 -> 1, 1 -> 2, 2 -> 1, 0 -> 1, 
+cache index : 0 3 1 2 6 6 
+current_steps is:1394408768
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 0, 5 -> 2, 3 -> 5, 0 -> 5, 2 -> 5, 
+cache index : 1 6 0 2 6 3 
+current_steps is:1394439982
+current load block is4;nedges is:268435456
+bucket sequence : 4 -> 5, 5 -> 4, 3 -> 4, 2 -> 4, 
+cache index : 6 6 0 1 3 2 
+current_steps is:1394466019
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 4, 1 -> 5, 4 -> 1, 5 -> 1, 2 -> 1, 
+cache index : 6 3 0 6 2 1 
+current_steps is:1394484104
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 1, 0 -> 4, 5 -> 0, 1 -> 0, 4 -> 0, 
+cache index : 3 1 6 6 0 2 
+current_steps is:1394491900
+current load block is3;nedges is:268434265
+bucket sequence : 3 -> 1, 5 -> 3, 1 -> 3, 4 -> 3, 
+cache index : 6 1 6 3 0 2 
+current_steps is:1394497540
+current load block is0;nedges is:268434590
+current load block is2;nedges is:268203024
+bucket sequence : 2 -> 0, 2 -> 3, 0 -> 2, 0 -> 3, 3 -> 2, 3 -> 0, 4 -> 2, 4 -> 0, 
+cache index : 2 6 3 1 0 6 
+current_steps is:1394501570
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 2, 1 -> 0, 2 -> 1, 4 -> 1, 0 -> 1, 
+cache index : 0 3 2 6 1 6 
+current_steps is:1394503303
+current load block is3;nedges is:268434265
+current load block is5;nedges is:126795792
+bucket sequence : 1 -> 5, 1 -> 3, 4 -> 5, 4 -> 3, 3 -> 5, 3 -> 1, 
+cache index : 6 1 6 2 0 3 
+current_steps is:1394504156
+current load block is2;nedges is:268203024
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 3, 4 -> 0, 4 -> 2, 2 -> 3, 3 -> 0, 3 -> 2, 
+cache index : 3 6 2 0 1 6 
+current_steps is:1394504424
+current load block is5;nedges is:126795792
+current load block is1;nedges is:268061757
+bucket sequence : 3 -> 1, 3 -> 5, 1 -> 2, 2 -> 1, 2 -> 5, 5 -> 2, 
+cache index : 6 3 0 1 6 2 
+current_steps is:1394504962
+current load block is4;nedges is:268435456
+current load block is0;nedges is:268434590
+bucket sequence : 3 -> 0, 3 -> 4, 2 -> 0, 2 -> 4, 
+cache index : 3 6 0 1 2 6 
+current_steps is:1394505032
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 4, 4 -> 5, 
+cache index : 6 6 1 2 0 3 
+current_steps is:1394505132
+current load block is1;nedges is:268061757
+current load block is0;nedges is:268434590
+bucket sequence : 0 -> 5, 0 -> 1, 5 -> 0, 5 -> 1, 1 -> 0, 2 -> 0, 2 -> 1, 
+cache index : 3 2 0 6 6 1 
+current_steps is:1394505404
+current load block is3;nedges is:268434265
+current load block is4;nedges is:268435456
+bucket sequence : 5 -> 4, 5 -> 3, 4 -> 0, 0 -> 4, 0 -> 3, 3 -> 0, 
+cache index : 0 6 6 2 3 1 
+current_steps is:1394505478
+current load block is2;nedges is:268203024
+current load block is1;nedges is:268061757
+bucket sequence : 1 -> 3, 1 -> 4, 3 -> 1, 3 -> 2, 4 -> 1, 4 -> 2, 2 -> 3, 2 -> 4, 
+cache index : 6 3 2 1 0 6 
+current_steps is:1394505554
+current load block is0;nedges is:268434590
+current load block is5;nedges is:126795792
+bucket sequence : 5 -> 1, 2 -> 5, 0 -> 1, 
+cache index : 2 1 0 6 6 3 
+current_steps is:1394505564
+current load block is4;nedges is:268435456
+bucket sequence : 3 -> 5, 
+cache index : 6 3 0 6 2 1 
+current_steps is:1394505564
+current load block is0;nedges is:268434590
+bucket sequence : 4 -> 0, 
+cache index : 2 3 6 6 0 1 
+current_steps is:1394505566
+current load block is3;nedges is:268434265
+bucket sequence : 0 -> 3, 
+cache index : 1 2 6 3 6 0 
+current_steps is:1394505569
+current load block is4;nedges is:268435456
+bucket sequence : 3 -> 4, 
+cache index : 0 6 6 1 3 2 
+current_steps is:1394505570
+bucket sequence : 1 -> 4, 
+cache index : 3 6 6 0 2 1 
+
+ === REPORT FOR node2vec_walkpersource_1_steps_40_dataset_/data/tw/twitter_tv.net() ===
+[Numeric]
+c_update:		1
+[Timings]
+act_simulated_annealing_scheduler_swap_blocks:		0.002089s	 (count: 62, min: 2.4e-05s, max: 6.3e-05, avg: 3.36935e-05s)
+exec_block_walk:		310.579s	 (count: 657, min: 9e-06s, max: 0.651979, avg: 0.472723s)
+load_block_info:		25.5728s	 (count: 73, min: 0.170703s, max: 0.671883, avg: 0.350312s)
+run_app:		343.225 s
+simulated_annealing_scheduler_swap_blocks:		25.5786s	 (count: 62, min: 5.9e-05s, max: 2.30831, avg: 0.412558s)
+[Other]
+app:	node2vec_walkpersource_1_steps_40_dataset_/data/tw/twitter_tv.net
+nblocks:	6
+ncblocks:	4
+scheduler:	sa

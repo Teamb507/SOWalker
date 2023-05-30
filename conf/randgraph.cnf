@@ -1,0 +1,5 @@
+# randgraph configuration
+# commandline parameters override values in the configuration file
+# e.g.
+# blocksize=65536
+# length=25
