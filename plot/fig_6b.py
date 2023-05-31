@@ -15,9 +15,36 @@ plt.rcParams.update(config)
 bar_width = 0.25
 
 
-graphwalker_bar = [1, 1, 1, 1, 1]
-grasorw_bar = [0.654575334, 0.31888947, 0.565504992, 0.479241251, 0.74890133]
-sowalker_bar = [0.151858519, 0.130402734, 0.412667312, 0.093720124, 0.314009966]
+sowalker_path ="/log/sowalker_pagerank_log"
+graphwalker_path="/log/graphwalker_pagerank_log"
+grasorw_path="/log/grasorw_pagerank_log"
+
+graphwalker_bar = []
+grasorw_bar = []
+sowalker_bar = []
+with open(sowalker_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find(".load_block_info=")!=-1):
+            sowalker_bar.append(float(dataline[dataline.find("=")+1:]))
+with open(graphwalker_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find(".load_block_info=")!=-1):
+            graphwalker_bar.append(float(dataline[dataline.find("=")+1:]))
+with open(grasorw_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find(".load_block_info=")!=-1):
+            grasorw_bar.append(float(dataline[dataline.find("=")+1:]))
+ for i in range(5):
+    sowalker_bar[i]=( sowalker_bar[i]/graphwalker_bar[i])
+    grasorw_bar[i]=(grasorw_bar[i]/graphwalker_bar[i])
+    graphwalker_bar[i]=1
+
 
 # ratio = [0.111957404, 0.458702192, 0.359379036, 0.459004998, 0.58698386, 0.692784113]
 dataset = ["$\mathrm{TW}$", "$\mathrm{FR}$", "$\mathrm{UK}$", "$\mathrm{K30}$", "$\mathrm{CW}$"]

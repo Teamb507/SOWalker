@@ -18,14 +18,324 @@ plt.rcParams.update(config)
 # width of the bars
 bar_width = 0.25
 
+graphwalker_bar = []
+grasorw_bar = []
+sowalker_bar = []
+tw_steps=61578415*80*10
+fr_steps=65608366*80*10
+uk_steps=133633040*80*10
 
-# graphwalker_bar = [1, 1, 1]
-# grasorw_bar = [6.97588784, 23.22501383, 1.158986686]
-# sowalker_bar = [62.7271331, 37.64027311, 18.0512667]
+input_path ="log/tw_sowalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/tw_steps))
+sowalker_bar.append(sum(ute_bar)/len(ute_bar))
 
-graphwalker_bar = [1, 1, 1]
-grasorw_bar = [7.0, 23.2, 1.2]
-sowalker_bar = [62.7, 37.6, 18.1]
+input_path ="log/fr_sowalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/fr_steps))
+sowalker_bar.append(sum(ute_bar)/len(ute_bar))
+
+input_path ="log/uk_sowalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/block_edges_bar))
+sowalker_bar.append(sum(ute_bar)/uk_steps)
+
+input_path ="log/tw_graphwalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/tw_steps))
+graphwalker_bar.append(sum(ute_bar)/len(ute_bar))
+
+input_path ="log/fr_sowalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/fr_steps))
+graphwalker_bar.append(sum(ute_bar)/len(ute_bar))
+
+input_path ="log/uk_sowalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/uk_steps))
+graphwalker_bar.append(sum(ute_bar)/len(ute_bar))
+
+
+input_path ="log/tw_grasorw_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/tw_steps))
+grasorw_bar.append(sum(ute_bar)/len(ute_bar))
+
+input_path ="log/fr_sowalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/fr_steps))
+grasorw_bar.append(sum(ute_bar)/len(ute_bar))
+
+input_path ="log/uk_sowalker_log"
+total_steps=0
+block_id=0
+block_edges=0
+block_id_bar=[]
+block_edges_bar=[]
+steps_bar=[]
+ute_bar=[]
+pre_steps=0
+current_steps=0
+io_number=0
+with open(input_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find("current_stepsis")!=-1):
+            # print(io_number)
+            total_steps=int(dataline[dataline.find(":")+1:])
+            current_steps=total_steps-pre_steps
+            pre_steps=current_steps
+            if(io_number!=0 and current_steps!=0):
+                for i in range(io_number):
+                    steps_bar.append(current_steps/io_number)
+            io_number = 0
+        if(dataline.find("currentloadblockis")!=-1):
+            io_number += 1
+            block_id=int(dataline[dataline.find("kis")+3:dataline.find(";")])
+            block_id_bar.append(block_id)
+            block_edges=int(dataline[dataline.find(":")+1:])
+            block_edges_bar.append(block_edges)
+for i in range(len(steps_bar)):
+    ute_bar.append(float(steps_bar/uk_steps))
+grasorw_bar.append(sum(ute_bar)/len(ute_bar))
+
+ for i in range(3):
+    sowalker_bar[i]=( sowalker_bar[i]/graphwalker_bar[i])
+    grasorw_bar[i]=(grasorw_bar[i]/graphwalker_bar[i])
+    graphwalker_bar[i]=1
 
 dataset = ["$\mathrm{TW}$", "$\mathrm{FR}$", "$\mathrm{UK}$"]
 

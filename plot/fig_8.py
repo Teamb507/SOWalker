@@ -20,13 +20,35 @@ plt.rcParams.update(config)
 
 # width of the bars
 bar_width = 0.25
+log_path="/log/blocksize_log"
+index=0
+twitter_sowalker =[]
+twitter_graphwalker =[]
+friendster_sowalker = []
+friendster_graphwalker =[]
+ukunion_sowalker = []
+ukunion_graphwalker = []
+with open(sowalker_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find(".run_app=")!=-1):
+            if(index==0):
+                twitter_sowalker.append(float(dataline[dataline.find("=")+1:]))
+            elif (index==1):
+               friendster_sowalker.append(float(dataline[dataline.find("=")+1:]))
+            elif (index==2):
+               ukunion_sowalker.append(float(dataline[dataline.find("=")+1:]))
+            elif (index==3):
+                twitter_graphwalker.append(float(dataline[dataline.find("=")+1:]))
+            elif (index==4):
+                friendster_graphwalker.append(float(dataline[dataline.find("=")+1:]))
+            else:
+                ukunion_graphwalker.append(float(dataline[dataline.find("=")+1:]))
+            index=index+1
+            if(index==6):
+	index=0
 
-twitter_sowalker = [1553.35, 1464.65, 1470.91, 1432.61, 1456.43]
-twitter_graphwalker = [3373.13, 2385.38, 1900.84, 1806.18, 1611]
-friendster_sowalker = [2985.05, 2139.64, 2078.36, 2099.17, 2150.028388]
-friendster_graphwalker = [21996.61346, 11854.95986, 6598.09, 4772.56, 2889.28]
-ukunion_sowalker = [2271.98, 2030.07, 3109.401132, 2133.91, 2441.33]
-ukunion_graphwalker = [26374.9, 11865.44497, 7449.40094, 5698.575063, 4012.83]
 dataset = ["$\mathrm{128MB}$", "$\mathrm{256MB}$", "$\mathrm{512MB}$", "$\mathrm{1GB}$", "$\mathrm{2GB}$"]
 
 x1 = np.arange(len(twitter_sowalker))

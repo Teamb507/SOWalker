@@ -100,141 +100,33 @@ Kron30 is a synthetic graph generated with the Graph500 generator. https://graph
 
 CrawlWeb can be downloaded from 'The 2012 common crawl graph' available at http://webdatacommons.org."
 
+
+
+## Discussion
+
 ### Figure 5 (Execution time) and Figure 6 (Block I/O time)
 
-#### Evaluate SOWalker
+ In this section of the experiment, we also compared GraSORW. We directly used the code provided by the author, which can be downloaded from https://github.com/DuoLife-QNL/GraSorw. You can easily run and modify the code according to the readme file. After that, copy the generated graphwalker_metrics.txt file to `/log` and rename it as grasorw_node2vec_log and grasorw_pagerank_log respectively.
 
-```
-./bin/test/node2vec /data/tw/twitter_tv.net c_update length 80 walkpersource 1 p 2.0 q 0.5 schedule sa skip
-```
-
-where 
-
-* `c_update` means adopting block set-oriented walk updating scheme;
-
-* `length` means walk length;
-
-* `walkpersource` means the number of walks starting from each vertex;
-
-* `p` and `q` are the parameters in node2vec;
-
-* `schedule sa` means adopting the benefit-aware I/O model according to the simulated annealing algorithm;
-
-* `skip` means the preprocessing step is skipped if the text format of the graph has been converted to csr format.
-
-#### Output
-
-The results are saved in `./randgraph_metrics.txt`, which contains the following content.
-
-```
-[node2vec_walkpersource_1_steps_80_dataset_/data/tw/twitter_tv.net:]
-.act_simulated_annealing_scheduler_swap_blocks=0.003366
-.act_simulated_annealing_scheduler_swap_blocks.count=101
-.act_simulated_annealing_scheduler_swap_blocks.min=0.000024
-.act_simulated_annealing_scheduler_swap_blocks.max=0.000051
-.act_simulated_annealing_scheduler_swap_blocks.avg=0.000033
-.app=node2vec_walkpersource_1_steps_80_dataset_/data/tw/twitter_tv.net
-.c_update=1
-.c_update.count=1
-.c_update.min=1
-.c_update.max=1
-.c_update.avg=1.000000
-.exec_block_walk=110.746530
-.exec_block_walk.count=1129
-.exec_block_walk.min=0.000010
-.exec_block_walk.max=0.169414
-.exec_block_walk.avg=0.098093
-.load_block_info=39.485015
-.load_block_info.count=113
-.load_block_info.min=0.177151
-.load_block_info.max=0.691122
-.load_block_info.avg=0.349425
-.nblocks=6
-.ncblocks=4
-.run_app=161.204929
-.run_app.count=1
-.run_app.min=161.204929
-.run_app.max=161.204929
-.run_app.avg=161.204929
-.scheduler=sa
-.simulated_annealing_scheduler_swap_blocks=39.496988
-.simulated_annealing_scheduler_swap_blocks.count=101
-.simulated_annealing_scheduler_swap_blocks.min=0.000062
-.simulated_annealing_scheduler_swap_blocks.max=2.380189
-.simulated_annealing_scheduler_swap_blocks.avg=0.391059
-```
-
-where 
-
-* `run_app` means the execution time;
-
-* `load_block_info` means the block I/O time.
-
-The complete experiment can be executed using the `./script/evaluation.sh`. Please note that you need to modify the dataset path accordingly.
+The complete experiment can be executed using the `./script/evaluation.sh`. Please note that you need to modify the dataset path accordingly.After executing this script command，you can get log file in`/log` and plot the figures in the  SOWalker paper .
 
 
 ###  Figure 7 (I/O utilization and walk updating rate)
 
-Modify the Makefile by adding the compilation option `-D IO_UTE` and rebuild.
-
-#### Run node2vec
-
-```
-./bin/test/node2vec /data/tw/twitter_tv.net c_update length 80 walkpersource 1 p 2.0 q 0.5 schedule sa skip >log
-```
-
-#### Output
+Firstly,modify the Makefile by adding the compilation option `-D IO_UTE` and rebuild.
 
 In our paper, we define the **I/O utilization rate** as the number of walk steps divided by the number of edges in a loaded block. Additionally, the **walk updating rate** is defined as the sum of the number of walk steps in a loaded block divided by the total steps needed to walk (e.g., |V| * walkpersource * length in node2vec), which is a constant.
 
-Use `./script/io_utilization.py` to process the log file and generate `log.csv` file. The first column is the loaded block id, the second column is the number of edges in a loaded block, and the third column is the number of walk steps.
-
-**'log.csv' file sample**
-
-```
-block_id	nedges	    update_steps
-10	        126871019	38279683
-0	        134217559	14820897
-9	        134214279	29615230
-8	        134212460	31539306
-...
-7	        134157594	24629446
-```
-
-The complete experiment can be executed using the `./script/io_utilization.sh`.
+Use `./script/io_utilization.py` to process the log file and plot the figures in the  SOWalker paper.You can get two files,`sowalker_log `and `graphwalker_log`,which indicate the connection between updated steps and Block I/O.
 
 ### Table 3 (Comparisons of Scheduling Models)
 
-#### Run node2vec on UK
+The parameter `schedule` is used to specify the scheduling models, where `random` means the Random model, `greedy` means the Max-m model, `lp` means the Exact model, and `sa` means the BA model.
 
-The parameter `schedule` is used to specify the scheduling models, where `random` means the Random model, `greedy` means the Max-m model, `lp` means the Exact model, and `sa` means the BA model. 
-
-```
-./bin/test/node2vec /data/uk/uk-union.txt  length 80 walkpersource 1 p 2.0 q 0.5 schedule lp skip
-```
-
-#### Output
-
-The execution results are saved in `./randgraph_metrics.txt`, where
-
-* `run_app` means the execution time;
-
-* `load_block_info` means the block I/O time;
-
-* `load_block_info.count` means the block I/O number;
-
-* `lp_solve_schedule` and `simulated_annealing_scheduler_swap_blocks` means the computation time of Exact and BA, respectively.
-
-The complete experiment can be executed using the `./script/scheduling.sh`.
+The complete experiment can be executed using the `./script/scheduling.sh`.After executing this script command，you can get log file in`/log`.You can easily get the data in the table by reading the log.
 
 ### Figure 8 (Impact of Block Size)
 
 The parameter `blocksize` is used to specify the block size in bytes. The memory size is set to 4GB, which is controlled by the `MEMORY_CACHE` in `api/constants.hpp`.
 
-```
-./bin/test/node2vec /data/uk/uk-union.txt  c_update blocksize 1073741824 length 80 walkpersource 1 p 2.0 q 0.5  schedule sa
-```
-
-The execution results are saved in `./randgraph_metrics.txt`, where `run_app` means the execution time.
-
-The complete experiment can be executed using the `./script/blocksize.sh`.
+The complete experiment can be executed using the `./script/blocksize.sh`. Please note that you need to modify the dataset path accordingly.After executing this script command，you can get log file in`/log `and plot the figures in the  SOWalker paper.

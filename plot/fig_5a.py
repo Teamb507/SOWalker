@@ -13,12 +13,35 @@ plt.rcParams.update(config)
 
 # width of the bars
 bar_width = 0.25
+sowalker_path ="/log/sowalker_node2vec_log"
+graphwalker_path="/log/graphwalker_node2vec_log"
+grasorw_path="/log/grasorw_node2vec_log"
 
-
-graphwalker_bar = [1, 1, 1, 1, 1]
-grasorw_bar = [0.846153846, 0.33413102, 0.988767989, 0.684824624, 0.555555488]
-sowalker_bar = [0.738974359, 0.311845648, 0.374341874, 0.120143049, 0.178596491]
-
+graphwalker_bar = []
+grasorw_bar = []
+sowalker_bar = []
+with open(sowalker_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find(".run_app=")!=-1):
+            sowalker_bar.append(float(dataline[dataline.find("=")+1:]))
+with open(graphwalker_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find(".run_app=")!=-1):
+            graphwalker_bar.append(float(dataline[dataline.find("=")+1:]))
+with open(grasorw_path, 'r', encoding='utf-8') as infile:
+    for line in infile:
+        data_line = line.strip("\n").split()
+        dataline = ''.join(data_line)
+        if(dataline.find(".run_app=")!=-1):
+            grasorw_bar.append(float(dataline[dataline.find("=")+1:]))
+ for i in range(5):
+    sowalker_bar[i]=( sowalker_bar[i]/graphwalker_bar[i])
+    grasorw_bar[i]=(grasorw_bar[i]/graphwalker_bar[i])
+    graphwalker_bar[i]=1
 
 dataset = ["$\mathrm{TW}$", "$\mathrm{FR}$", "$\mathrm{UK}$", "$\mathrm{K30}$", "$\mathrm{CW}$"]
 
