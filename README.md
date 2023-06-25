@@ -77,26 +77,3 @@ All of the applications above share a common set of configurations, which we lis
 ./bin/test/node2vec /Dataset/soc-LiveJournal1.txt c_update dynamic length 20 walkpersource 1 p 2.0 q 0.5 schedule sa
 ```
 
-### Docker
-
-First, make sure that you have docker installed:
-
-```
-$ sudo apt update
-$ sudo apt install docker
-```
-
-From the repository directory, run these commands to create a Docker image and container:
-
-```
-$ docker build . -t sowalker
-$ docker create -t -i --name sowalker -v $(pwd):/sowalker sowalker bash
-```
-
-This will create a Docker image and container. To run it, type:
-
-```
-$ docker start -a -i sowalker
-```
-
-to open a shell within the box. You can find SOWalker's code mounted at `/sowalker` and run the commands mentioned above like normal.
